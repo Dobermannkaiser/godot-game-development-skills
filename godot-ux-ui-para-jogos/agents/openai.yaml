@@ -1,0 +1,14 @@
+interface:
+  display_name: Godot — UX e UI para Jogos 3.0
+  short_description: UX/UI verificável e acessível para Godot 4.x
+  default_prompt: Use $godot-ux-ui-para-jogos para projetar e validar uma interface
+    clara, acessível e coerente com as regras do jogo.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
