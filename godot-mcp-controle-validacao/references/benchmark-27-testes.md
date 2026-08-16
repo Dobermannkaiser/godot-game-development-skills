@@ -62,7 +62,7 @@ O **acesso direto aos arquivos** deve ser preferido para código e propriedades 
 Caminho local durante os testes:
 
 ```text
-C:\Users\Paulo\Documents\golems-mandate-parte-3-etapa-12-v-3.11.5-(1)
+<PROJECT_PATH>
 ```
 
 O nome da pasta permaneceu antigo, mas ao final do Teste 27 o projeto interno foi promovido para:
@@ -108,7 +108,7 @@ args:
 Variável de ambiente:
 
 ```text
-GODOT_PATH=C:\Program Files (x86)\Steam\steamapps\common\Godot Engine\godot.windows.opt.tools.64.exe
+GODOT_PATH=<GODOT_EXECUTABLE_PATH>
 ```
 
 O `cwd` do MCP ficou vazio. O projeto é escolhido pelo workspace/pasta aberta no Codex, e **não** substituindo `GODOT_PATH` pelo caminho do projeto.
@@ -1106,7 +1106,7 @@ O projeto atual foi transformado de laboratório em nova versão consolidada.
 Foi localizada uma baseline externa segura na Área de Trabalho e usada somente para leitura/comparação:
 
 ```text
-C:\Users\Paulo\Desktop\GolemsMandate-Parte3-Etapa12-v3.11.5 (2)
+<PROJECT_PATH>
 ```
 
 ### Features experimentais removidas
