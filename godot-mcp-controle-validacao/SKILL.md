@@ -1,8 +1,5 @@
 ---
 name: godot-mcp-controle-validacao
-display_name: Godot MCP — Controle, Segurança e Validação
-version: 1.0.0
-language: pt-BR
 description: Controlar o uso de Godot MCP e Codex em projetos Godot 4.x com autorização obrigatória antes de qualquer alteração, inspeção prévia, validação independente de writes, prevenção de falsos sucessos, reprodução antes de corrigir bugs, regressões, auditoria de escopo e diretrizes empiricamente derivadas de um benchmark de 27 testes no Golem’s Mandate. Usar sempre que uma IA operar Godot via MCP, editar projeto com Codex ou combinar acesso direto aos arquivos com execução/debug no motor.
 ---
 
