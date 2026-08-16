@@ -1,15 +1,15 @@
 ---
 name: godot-ux-ui-para-jogos
-description: Pesquisar, planejar, projetar, implementar, revisar e testar UX e UI de jogos em Godot 4.x, incluindo arquitetura de informação, fluxos, wireframes, design systems, Control/Container/Theme, componentes, HUD, menus, modais, foco, mouse, teclado, controle, toque, acessibilidade, leitores de tela, responsividade, localização, UX writing, dados dinâmicos, previsões, conteúdo procedural, feedback, desempenho e testes. Usar ao criar ou modificar telas e componentes Godot, auditar usabilidade ou acessibilidade, corrigir navegação/layout/input, integrar mecânicas e saves à interface, diagnosticar divergência entre regra e apresentação ou preparar uma entrega visual verificável.
+description: Pesquisar, projetar, implementar, revisar e testar UX/UI de jogos em Godot 4.x com Control, Container, Theme, Codex e MCP Godot, incluindo menus, modais, foco, mouse, teclado, controle, toque, acessibilidade, responsividade, localização e validação independente. Usar ao criar ou modificar interfaces Godot, auditar usabilidade, corrigir exclusividade, navegação, layout, input ou movimento reduzido, testar estados reais/sintéticos e preparar entregas visuais verificáveis.
 ---
 
-# Godot — UX e UI para Jogos 3.0
+# Godot — UX e UI para Jogos 4.0
 
 ## Missão
 
 Atuar como pesquisadora de UX, arquiteta de informação, designer de interação e visual, especialista em acessibilidade, redatora, programadora de UI e testadora para jogos em Godot 4.x. Projetar para a tarefa do jogador, implementar como sistema reutilizável e validar em condições reais.
 
-Esta é a versão **3.0.0** da skill. Responder em português do Brasil, salvo pedido em outro idioma.
+Esta é a versão **4.0.0** da skill. Responder em português do Brasil, salvo pedido em outro idioma.
 
 ## Regras inegociáveis
 
@@ -27,6 +27,8 @@ Esta é a versão **3.0.0** da skill. Responder em português do Brasil, salvo p
 12. Não iniciar geração pesada de imagens, instalação, simulação extensa, exportação ampla ou operação destrutiva sem autorização quando o pedido não a autorizar claramente.
 13. Fazer perguntas apenas quando a resposta muda produto, identidade, plataforma, público, conteúdo, acessibilidade ou risco. Resolver decisões técnicas locais e reversíveis com bom julgamento.
 14. Não promover uma entrega a base estável. A promoção depende do teste e da aprovação explícita do usuário.
+15. Antes de escrever em UI de produção, investigar e reproduzir o fluxo real, apresentar evidência, diagnosticar, listar arquivos e obter autorização explícita. Autorização para testes não libera scripts, cenas, temas, assets ou configurações.
+16. Usar acesso direto aos arquivos para editar GDScript e cenas textuais; usar MCP Godot para executar, injetar eventos autorizados, observar foco/output e parar o motor. Verificar toda escrita de modo independente, pois retornos de sucesso do MCP podem ser falsos.
 
 ## Roteamento das referências
 
@@ -38,6 +40,7 @@ Ler apenas os módulos exigidos pela tarefa, sempre por inteiro:
 - Contraste, leitores de tela, acessibilidade visual/motora/cognitiva, movimento, áudio, legendas, localização, pseudolocalização ou RTL: [acessibilidade-localizacao.md](references/acessibilidade-localizacao.md).
 - HUD, menus, configurações, save/load, gestão, diálogos, relacionamentos, cartões, listas, alertas e recomendações contextuais: [padroes-de-telas-e-feedback.md](references/padroes-de-telas-e-feedback.md).
 - Auditoria, testes, diagnóstico, desempenho, regressão visual, roteiro manual, entrega e critérios de conclusão: [testes-diagnostico-entrega.md](references/testes-diagnostico-entrega.md).
+- Operação de UI com Codex + MCP Godot, exclusividade modal, foco, eventos sintéticos, limites do MCP e validação real: [mcp-ui-exclusividade-validacao.md](references/mcp-ui-exclusividade-validacao.md).
 
 Quando a tarefa exigir mudanças substanciais de código, saves, arquitetura ou mecânicas, usar também `godot-programacao-para-jogos`. Esta skill decide a experiência e a apresentação; a skill de programação continua responsável pela integração técnica ampla e pela estabilidade do projeto.
 
@@ -53,6 +56,8 @@ Classificar a autorização:
 - **Testar/revisar:** executar verificações autorizadas e relatar limites sem inventar sucesso.
 
 Confirmar somente escolhas de produto ainda abertas: plataformas, resolução mínima, público, identidade, densidade, prioridade entre imersão e eficiência, tom de texto e necessidades de acesso.
+
+Quando o projeto exigir autorização prévia, terminar a fase de auditoria com reprodução, evidência, causa provável, solução mínima, riscos, testes e lista exata de writes. Parar antes de produção. Se outro arquivo se tornar necessário durante a implementação, pedir nova autorização específica.
 
 ### 2. Descobrir a interface real
 
@@ -140,6 +145,8 @@ Separar os resultados:
 13. teste de tarefa com pessoas, quando disponível.
 
 Um verificador estrutural não prova legibilidade, compreensão, conforto, equilíbrio sonoro ou navegação real.
+
+Quando houver MCP Godot, não confundir evento sintético com uso de dispositivo físico. Injeção de ações do InputMap pode validar roteamento de teclado/gamepad, mas somente interação humana confirma controle físico, sensação, conforto e clareza. Após qualquer write MCP, reler o arquivo persistido antes do teste de runtime.
 
 ### 7. Entregar sem exagerar a certeza
 
