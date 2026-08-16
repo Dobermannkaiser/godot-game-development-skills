@@ -36,22 +36,18 @@ As regras dessa skill foram derivadas de um benchmark progressivo de 27 testes r
 
 ## Estrutura
 
-Cada skill é distribuída como uma pasta completa.
+Cada skill é distribuída como uma pasta completa, organizada para manter as instruções principais, os metadados de integração e os materiais complementares necessários.
 
-As skills de programação e UX/UI podem incluir:
+A estrutura básica das três skills inclui:
 
-* `SKILL.md`;
-* metadados em `agents/`;
-* ícone em `assets/`;
-* documentação modular em `references/`.
+* `SKILL.md` — instruções principais da skill;
+* `agents/openai.yaml` — metadados e configuração de integração;
+* `assets/icon.svg` — ícone da skill;
+* `references/` — documentação técnica e materiais de referência.
 
-A skill de controle MCP inclui:
+Algumas skills também podem incluir arquivos adicionais, como `README.md`, quando houver documentação específica que seja útil fora do `SKILL.md`.
 
-* `SKILL.md`;
-* `README.md`;
-* documentação técnica em `references/`.
-
-A estrutura pode evoluir entre versões conforme a necessidade de cada skill.
+O conteúdo de `references/` varia de acordo com a finalidade de cada skill e pode evoluir entre versões.
 
 ## Instalação
 
