@@ -530,9 +530,9 @@ Uma bridge experimental deve ser removida depois do experimento se não houver r
 
 ---
 
-# 15. Suite permanente do Golem’s Mandate v3.11.6
+# 15. Suite permanente originada no benchmark do Golem’s Mandate
 
-Estado de referência ao fim do benchmark:
+Estado de referência registrado ao fim do benchmark realizado na v3.11.6:
 
 ```text
 tests/
@@ -566,7 +566,7 @@ Para uma mudança ampla ou de save/state, executar também a integração comple
 
 ---
 
-# 16. Três fixes que pertencem à v3.11.6
+# 16. Três fixes originados no benchmark da v3.11.6
 
 Não remover sem nova evidência, novo teste e autorização explícita.
 
