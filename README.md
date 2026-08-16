@@ -1,16 +1,20 @@
 # Godot Game Development Skills
 
-Duas skills em português para auxiliar agentes de inteligência artificial no desenvolvimento de jogos com Godot 4.x.
+Três skills em português para auxiliar agentes de inteligência artificial no desenvolvimento seguro e verificável de jogos com Godot 4.x.
 
 ## Skills incluídas
 
-### Godot — Programação para Jogos 3.0
+### Godot — Programação para Jogos 4.0
 
-Programação, arquitetura, depuração, testes, saves, migrações, sistemas narrativos, relacionamentos, economia e entrega de projetos em Godot 4.x.
+Programação, arquitetura, depuração, testes, saves, migrações e entrega de projetos em Godot 4.x, com edição direta, operação via MCP, autorização por escopo e validação independente.
 
-### Godot — UX e UI para Jogos 3.0
+### Godot — UX e UI para Jogos 4.0
 
-Planejamento, implementação e revisão de UX/UI, acessibilidade, responsividade, navegação, conteúdo procedural e validação visual em Godot 4.x.
+Planejamento, implementação e revisão de UX/UI, acessibilidade, responsividade, exclusividade modal, foco, movimento reduzido e validação no Godot real.
+
+### Godot MCP — Controle, Segurança e Validação 1.0
+
+Governança para Codex e Godot MCP baseada em um benchmark progressivo de 27 testes: autorização obrigatória, mapa de confiabilidade, prevenção de falsos sucessos, reprodução de bugs e auditoria de writes.
 
 ## Estrutura
 
@@ -31,6 +35,7 @@ Não copie somente o arquivo `SKILL.md`, pois os arquivos complementares fazem p
 
 * `godot-programacao-para-jogos`
 * `godot-ux-ui-para-jogos`
+* `godot-mcp-controle-validacao`
 
 ## Inteligência artificial
 

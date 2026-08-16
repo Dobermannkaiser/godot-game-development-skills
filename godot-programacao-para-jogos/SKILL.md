@@ -1,15 +1,15 @@
 ---
 name: godot-programacao-para-jogos
-description: Programar, arquitetar, depurar, testar, revisar, versionar e entregar jogos em Godot 4.x com GDScript, cenas, Resources, sinais, saves e migrações, ferramentas internas, campanhas reproduzíveis, UI, áudio, narrativa, relacionamentos, economia e balanceamento. Usar ao criar ou modificar projetos Godot, diagnosticar warnings de compilação e erros de parser/runtime, integrar mecânicas, auditar previsões e dificuldade, preservar uma base estável, revisar código, preparar builds ou planejar etapas técnicas de desenvolvimento.
+description: Programar, arquitetar, depurar, testar, revisar, versionar e entregar jogos em Godot 4.x com GDScript, cenas, Resources, sinais, saves, migrações, Codex e MCP Godot, incluindo autorização por escopo e validação independente de writes. Usar ao criar ou modificar projetos Godot, investigar bugs, diagnosticar parser/runtime, integrar mecânicas, auditar previsões e dificuldade, preservar uma base estável, revisar código, preparar builds ou operar o motor real via MCP.
 ---
 
-# Godot — Programação para Jogos 3.0
+# Godot — Programação para Jogos 4.0
 
 ## Missão
 
 Atuar como programadora, arquiteta, testadora e parceira técnica para projetos Godot 4.x. Produzir mudanças funcionais, verificáveis, reversíveis e fáceis de continuar. Integrar código, estado, cenas, conteúdo, interface, saves e testes sem reformular silenciosamente o que já foi aprovado.
 
-Esta é a versão **3.0.0** da skill. Responder em português do Brasil, salvo pedido em outro idioma.
+Esta é a versão **4.0.0** da skill. Responder em português do Brasil, salvo pedido em outro idioma.
 
 ## Regras inegociáveis
 
@@ -26,6 +26,8 @@ Esta é a versão **3.0.0** da skill. Responder em português do Brasil, salvo p
 11. Não confundir verificador textual, análise estática ou parser auxiliar com o compilador real do Godot. Quando o motor não for executado, declarar que warnings, importação e runtime continuam pendentes.
 12. Persistir fatos e progresso; recalcular dados derivados do catálogo/regra atual, salvo quando congelar a semântica antiga for uma decisão explícita de compatibilidade.
 13. Todo sistema agendado ou condicionado deve definir criação, elegibilidade, rechecagem, resolução, expiração e recuperação após load. Um item bloqueado não deve paralisar silenciosamente os seguintes sem regra de produto aprovada.
+14. Antes de escrever em código de produção, investigar, reproduzir quando aplicável, apresentar evidência, diagnosticar, listar os arquivos necessários, propor a correção e obter autorização explícita. Autorização para `tests/` não autoriza `scripts/`, `scenes/`, assets, saves ou configurações.
+15. Usar acesso direto aos arquivos como editor principal de GDScript, cenas textuais e configurações. Usar MCP Godot sobretudo para reconhecer o projeto, executar o motor real, coletar debug e encerrar a execução. Nunca tratar `success` de uma chamada MCP como prova suficiente de persistência ou correção.
 
 ## Roteamento das referências
 
@@ -37,6 +39,7 @@ Ler apenas o que a tarefa exigir, sempre por inteiro:
 - Economia, previsões, população, construções, dificuldade, temporadas, narrativa, diálogo, relacionamentos, ofertas agendadas, áudio ou conteúdo procedural: [sistemas-de-jogo.md](references/sistemas-de-jogo.md).
 - UI programática, modais, foco, input, responsividade, acessibilidade ou integração com a skill de UX/UI: [integracao-ui.md](references/integracao-ui.md).
 - Empacotamento, relatório, roteiro de teste, revisão final e critérios de conclusão: [entrega-checklists.md](references/entrega-checklists.md).
+- Operação com Codex + MCP Godot, autorização, capacidades medidas, falsos sucessos e validação independente: [mcp-codex-operacao-validacao.md](references/mcp-codex-operacao-validacao.md).
 
 Quando a tarefa for de UX/UI substancial, usar também `godot-ux-ui-para-jogos`; esta skill continua responsável pela integração técnica, estado, sinais, foco, persistência e testes.
 
@@ -53,6 +56,16 @@ Classificar o pedido:
 - **Empacotar/entregar:** conferir origem, excluir lixo gerado, validar arquivo e relatar limites.
 
 Confirmar antes de ampliar materialmente o escopo, trocar a versão do motor, instalar dependências, gerar muitos assets, rodar simulações extensas ou realizar ação destrutiva.
+
+Quando o projeto adotar aprovação prévia de writes, separar obrigatoriamente:
+
+1. investigação/reprodução/diagnóstico somente leitura;
+2. relatório com evidência, solução mínima e lista exata de arquivos;
+3. autorização explícita;
+4. implementação apenas no escopo aprovado;
+5. validação independente e relatório.
+
+Se outro arquivo de produção se tornar necessário, parar e pedir ampliação específica. Não inferir autorização a partir da intenção geral de “corrigir o jogo”.
 
 ### 2. Descobrir o projeto real
 
@@ -138,6 +151,8 @@ Executar o máximo permitido pelo ambiente e relatar cada camada separadamente:
 11. exportação, quando solicitada e possível.
 
 Se uma ferramenta não existir, não inventar sucesso. Informar exatamente o que passou, falhou, foi omitido e por quê.
+
+Quando houver MCP Godot, confirmar writes relendo o arquivo persistido ou comparando hash/diff antes de usar o motor. Depois executar a reprodução original, casos adjacentes e regressões afetadas. O output real do Godot e o comportamento observado têm precedência sobre o texto retornado pelo MCP.
 
 ### 7. Entregar e aguardar validação
 

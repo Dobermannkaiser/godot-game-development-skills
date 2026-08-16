@@ -1,9 +1,11 @@
 interface:
-  display_name: "Godot — Programação para Jogos 3.0"
-  short_description: "Engenharia completa de jogos em Godot 4.x"
-  icon_small: "./assets/icon.svg"
-  icon_large: "./assets/icon.svg"
-  default_prompt: "Use $godot-programacao-para-jogos para desenvolver esta etapa do meu jogo em Godot 4.x com segurança, testes, balanceamento auditável e compatibilidade de saves."
+  display_name: Godot — Programação para Jogos 4.0
+  short_description: Engenharia completa de jogos em Godot 4.x
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+  default_prompt: Use $godot-programacao-para-jogos para desenvolver no Godot 4.x
+    com edição direta, MCP, autorização por escopo, testes reais e compatibilidade
+    de saves.
 policy:
   allow_implicit_invocation: true
   products:
