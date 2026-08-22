@@ -1,92 +1,125 @@
 # Godot Game Development Skills
 
-Três skills em português para auxiliar agentes de inteligência artificial no desenvolvimento de jogos com Godot 4.x, cobrindo programação, UX/UI e operação segura com Codex + Godot MCP.
+**Portuguese-language skills for AI-assisted game development with Godot 4.**
 
-## Skills incluídas
+This repository contains reusable skills designed to help AI agents work more effectively and safely with Godot projects.
 
-### Godot — Programação para Jogos 4.0
+The collection currently covers three complementary areas: game programming, UX/UI development and operational control when an AI agent has direct access to project files or Godot through MCP.
 
-Programação, arquitetura, depuração, testes, saves, migrações, sistemas narrativos, relacionamentos, economia, integração com Codex e Godot MCP e entrega de projetos em Godot 4.x.
+## Available Skills
 
-A skill também define práticas de autorização por escopo, validação independente de alterações, preservação de bases estáveis e uso do Godot real para confirmar parser, runtime e comportamento.
+| Skill | Version | Main focus |
+| --- | --- | --- |
+| [`godot-programacao-para-jogos`](godot-programacao-para-jogos/) | `4.0.0` | Architecture, GDScript, game systems, saves, debugging and testing |
+| [`godot-ux-ui-para-jogos`](godot-ux-ui-para-jogos/) | `4.0.0` | UX, UI systems, accessibility, layouts, navigation and visual validation |
+| [`godot-mcp-controle-validacao`](godot-mcp-controle-validacao/) | `1.0.0` | MCP control, authorization, validation, regression prevention and operational safety |
 
-### Godot — UX e UI para Jogos 4.0
+## Which Skill Should I Use?
 
-Planejamento, implementação e revisão de UX/UI, acessibilidade, responsividade, navegação, conteúdo procedural e validação visual em Godot 4.x.
+### Godot — Programação para Jogos
 
-Inclui orientação para integração técnica com sistemas do jogo, foco, input, responsividade, clareza de interface e validação da experiência do usuário.
+Use `godot-programacao-para-jogos` when the task involves:
 
-### Godot MCP — Controle, Segurança e Validação 1.0
+- GDScript;
+- game architecture;
+- gameplay systems;
+- saves and migrations;
+- debugging;
+- automated or manual testing;
+- economy and management systems;
+- narrative systems;
+- relationships and progression;
+- integration between project systems.
 
-Camada operacional para uso seguro de Codex, acesso direto aos arquivos e Godot MCP.
+It also includes practices for preserving stable project states, validating modifications and using the real Godot environment when runtime confirmation is necessary.
 
-Define regras para:
+### Godot — UX e UI para Jogos
 
-* autorização explícita antes de alterações;
-* inspeção antes de edição;
-* validação independente de writes;
-* prevenção de falsos sucessos do MCP;
-* reprodução de bugs antes da correção;
-* regressões;
-* testes de save/load e round-trip;
-* auditoria de escopo;
-* uso responsável de ferramentas destrutivas ou de versionamento.
+Use `godot-ux-ui-para-jogos` when the task involves:
 
-As regras dessa skill foram derivadas de um benchmark progressivo de 27 testes realizados com Godot MCP no projeto Golem’s Mandate.
+- interface design;
+- UX flows;
+- menus and navigation;
+- responsive layouts;
+- focus and input;
+- accessibility;
+- procedural interface content;
+- clarity and usability;
+- visual validation.
 
-## Estrutura
+The skill is intended to connect UX/UI decisions with the actual technical systems of a Godot project.
 
-Cada skill é distribuída como uma pasta completa, organizada para manter as instruções principais, os metadados de integração e os materiais complementares necessários.
+### Godot MCP — Controle, Segurança e Validação
 
-A estrutura básica das três skills inclui:
+Use `godot-mcp-controle-validacao` when an AI agent can directly inspect, modify or execute a Godot project through tools such as Codex and Godot MCP.
 
-* `SKILL.md` — instruções principais da skill;
-* `agents/openai.yaml` — metadados e configuração de integração;
-* `assets/icon.svg` — ícone da skill;
-* `references/` — documentação técnica e materiais de referência.
+It defines practices for:
 
-Algumas skills também podem incluir arquivos adicionais, como `README.md`, quando houver documentação específica que seja útil fora do `SKILL.md`.
+- explicit authorization before modifications;
+- inspection before editing;
+- independent validation after writes;
+- scope control;
+- bug reproduction before correction;
+- regression testing;
+- save/load and round-trip validation;
+- prevention of false-success reports;
+- safer use of destructive or version-control operations.
 
-O conteúdo de `references/` varia de acordo com a finalidade de cada skill e pode evoluir entre versões.
+This skill acts as an additional operational layer. It does not replace the programming or UX/UI skills.
 
-## Instalação
+Its rules were developed from a progressive benchmark of 27 Godot MCP tests performed during development of Golem's Mandate.
 
-Copie a pasta completa da skill para o diretório de skills compatível com seu agente ou ferramenta.
+## Quick Start
 
-Não copie somente o arquivo `SKILL.md`, pois os arquivos complementares fazem parte das instruções e referências utilizadas pela skill.
+Each skill is distributed as a complete folder.
 
-## Skills disponíveis
+To use one:
 
-* `godot-programacao-para-jogos` — versão 4.0.0
-* `godot-ux-ui-para-jogos` — versão 4.0.0
-* `godot-mcp-controle-validacao` — versão 1.0.0
+1. Choose the skill that matches your task.
+2. Download or clone this repository.
+3. Copy the **entire skill folder** into the skills directory supported by your AI agent or development environment.
+4. Keep `SKILL.md`, `agents/`, `assets/` and `references/` together.
+5. Start a new task with the skill available to the agent.
 
-## Uso conjunto
+Do not copy only `SKILL.md`.
 
-As três skills podem ser utilizadas em conjunto.
+The supporting files contain metadata, references and additional instructions that are part of the skill.
 
-Uma divisão recomendada é:
+## Using the Skills Together
 
-* `godot-programacao-para-jogos` — arquitetura, GDScript, sistemas, saves, implementação e testes;
-* `godot-ux-ui-para-jogos` — UX/UI, acessibilidade, layout, navegação e validação visual;
-* `godot-mcp-controle-validacao` — autorização, controle operacional, execução via MCP, validação independente e segurança.
+The three skills are designed to complement one another.
 
-A skill MCP não substitui as skills de programação ou UX/UI. Ela funciona como uma camada adicional de controle e validação quando uma IA possui acesso direto ao projeto ou utiliza Godot MCP.
+A typical combination is:
 
-## Inteligência artificial
+**Programming**
 
-Estas skills foram produzidas com auxílio extensivo de ferramentas de inteligência artificial.
+`godot-programacao-para-jogos`
 
-O responsável pelo repositório não reivindica que todo o material tenha sido criado manualmente por ele.
+Handles architecture, GDScript, gameplay systems, saves, implementation and testing.
 
-## Licença
+**UX/UI**
 
-Na medida permitida por lei, todos os direitos autorais e direitos conexos que o responsável por este repositório possa possuir sobre este material são dedicados ao domínio público por meio da **CC0 1.0 Universal**.
+`godot-ux-ui-para-jogos`
 
-Você pode copiar, modificar, distribuir e utilizar estas skills, inclusive para fins comerciais, sem pedir autorização e sem obrigação de atribuição.
+Handles interface design, accessibility, layouts, navigation and user-experience validation.
 
-Consulte o arquivo [`LICENSE`](LICENSE) para ler o texto jurídico completo da CC0 1.0 Universal.
+**Operational control**
 
-A CC0 aplica-se somente aos direitos que o responsável por este repositório efetivamente possui e pode legalmente renunciar. Materiais de terceiros, caso existam, não são abrangidos por essa dedicação e permanecem sujeitos aos direitos e às licenças de seus respectivos titulares.
+`godot-mcp-controle-validacao`
 
-Nenhuma garantia é fornecida sobre estas skills ou sua adequação a uma finalidade específica.
+Adds authorization boundaries, MCP execution rules, independent validation and safer direct project access.
+
+For tasks that involve direct AI modification of a Godot project, the MCP skill can be used together with either of the other two.
+
+## Skill Structure
+
+A typical skill directory contains:
+
+```text
+skill-name/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── assets/
+│   └── icon.svg
+└── references/
